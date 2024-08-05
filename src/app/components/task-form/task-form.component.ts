@@ -35,10 +35,8 @@ export class TaskFormComponent implements OnInit {
       this.taskService.getTask(this.taskId).subscribe((response: ApiResponse<Task>) => {
         if (response.success && response.data) {
           const task = response.data;
-          // Log the raw deadline received from the server
           console.log('Raw deadline from server:', task.deadline);
 
-          // Convert the deadline to yyyy-MM-dd format
           const deadline = task.deadline ? new Date(task.deadline).toISOString().split('T')[0] : '';
           console.log('Formatted deadline for input:', deadline);
 
@@ -56,7 +54,6 @@ export class TaskFormComponent implements OnInit {
     if (this.taskForm.valid) {
       const formValue = this.taskForm.value;
 
-      // Ajuste para converter a data para o formato ISO se necessário
       formValue.deadline = formValue.deadline ? new Date(formValue.deadline).toISOString() : null;
 
       if (this.taskId) {

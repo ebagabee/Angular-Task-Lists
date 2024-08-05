@@ -53,7 +53,7 @@ export class TaskListComponent implements OnInit {
     return 'Prazo Encerrado';
   }
   
-  return `${daysRemaining} dias restantes`;
+  return `${daysRemaining} dia(s) restantes`;
 }
 
 
