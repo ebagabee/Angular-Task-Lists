@@ -1,27 +1,45 @@
-# TaskList
+Esse repositório é em conjunto com o repositório de [Backend](https://github.com/ebagabee/Lista-Tarefas)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+## Pré-requisitos
 
-## Development server
+- NodeJS
+- npm
+- Angular/CLI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalação
 
-## Code scaffolding
+1. Clone esse repositório
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+git clone https://github.com/ebagabee/Angular-Task-Lists.git
+```
 
-## Build
+2. Navegue até o diretorio Frontend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+cd seu-repositorio/frontend
+```
+3. Installe as dependencias:
 
-## Running unit tests
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Executando o Projeto
 
-## Running end-to-end tests
+```bash
+ng serve
+```
+## Estrutura do Projeto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- src/app/components
+- src/app/services
+- src/app/models
 
-## Further help
+## Funcionalidades
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Listagem de Tarefas
+- Criação de tarefas
+- Edição de tarefas
+- Exclusão de tarefas
+
