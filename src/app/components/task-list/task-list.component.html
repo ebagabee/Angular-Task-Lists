@@ -1,0 +1,43 @@
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Lista de Tarefas</h2>
+  
+  <div class="mb-4 flex items-center justify-between">
+    <input 
+      [(ngModel)]="filterText" 
+      (input)="filterTasks()" 
+      type="text" 
+      placeholder="Filtrar tarefas..." 
+      class="w-1/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-opacity-50"
+    />
+    <button 
+      (click)="router.navigate(['/create-task'])" 
+      class="bg-blue-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring focus:ring-opacity-50"
+    >
+      Criar Tarefa
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded shadow-md">
+    <ul>
+      <li *ngFor="let task of filteredTasks" class="mb-4 p-4 border border-gray-300 rounded-md shadow-sm">
+        <h3 class="text-xl font-semibold mb-2">{{ task.title }}</h3>
+        <p class="text-gray-700 mb-2">{{ task.description }}</p>
+        <p class="text-gray-500">Prazo: {{ calculateDaysRemaining(task.deadline) }}</p>
+        <div class="flex items-center justify-between">
+          <button 
+            (click)="editTask(task.id)" 
+            class="bg-yellow-500 text-white px-3 py-1 rounded-md shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-opacity-50"
+          >
+            Editar
+          </button>
+          <button 
+            (click)="deleteTask(task.id)" 
+            class="bg-red-500 text-white px-3 py-1 rounded-md shadow-sm hover:bg-red-600 focus:outline-none focus:ring focus:ring-opacity-50"
+          >
+            Deletar
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
