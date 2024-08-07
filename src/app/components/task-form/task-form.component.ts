@@ -35,10 +35,7 @@ export class TaskFormComponent implements OnInit {
       this.taskService.getTask(this.taskId).subscribe((response: ApiResponse<Task>) => {
         if (response.success && response.data) {
           const task = response.data;
-          console.log('Raw deadline from server:', task.deadline);
-
           const deadline = task.deadline ? new Date(task.deadline).toISOString().split('T')[0] : '';
-          console.log('Formatted deadline for input:', deadline);
 
           this.taskForm.patchValue({
             title: task.title,
